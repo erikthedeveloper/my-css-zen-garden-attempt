@@ -1,0 +1,202 @@
+/* Author: Erik Aybar */
+
+/*=======================================================
+=            HTML elements and Global Styles            =
+=======================================================*/
+
+/* basic elements */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font: 75% georgia, sans-serif;
+	line-height: 1.88889;
+	color: #555753;
+}
+
+p {
+
+}
+
+
+a {
+
+}
+
+a:link {
+}
+
+a:visited {
+}
+
+a:hover, a:focus, a:active {
+}
+
+.page-wrapper {
+	width: 80%;
+	margin: 0 auto;
+}
+
+/*-----  End of HTML elements and Global Styles  ------*/
+
+
+
+
+/*=====================================
+=            Section intro            =
+=====================================*/
+
+
+
+
+
+/**
+ * Contains only header, h1, and h2 in document
+ */
+.intro { /*#zen-intro*/
+
+}
+
+.intro header {
+
+}
+h1 {
+
+}
+h2 {
+
+}
+h3 { /*8 Throughout Document*/
+
+}
+
+.summary {
+
+}
+.summary p:first-child {
+	color: red;
+}
+.summary p:last-child {
+	color: green;
+}
+
+.preamble {
+
+}
+.preamble h3 {
+
+}
+.preamble p { /*3 p's with multiple abbrs...*/
+
+}
+
+/*-----  End of Section intro  ------*/
+
+
+/*===========================================
+=            div.main.supporting            =
+===========================================*/
+
+.main {
+
+}
+
+.main .explanation {
+
+}
+.main .explanation h3 {
+
+}
+.main .explanation p { /* 2 P's */
+
+}
+
+
+.main .participation {
+
+}
+.main .participation h3 {
+
+}
+.main .participation p { /* 3 P's */
+
+}
+
+.main .benefits {
+
+}
+.main .benefits h3 {
+
+}
+.main .benefits p { /* 1 P */
+
+}
+
+.main .requirements {
+
+}
+.main .requirements h3 {
+
+}
+.main .requirements p { /* 5 P's */
+
+}
+
+footer {
+
+}
+footer a { /* footer a.zen-* */
+
+}
+
+/*-----  End of div.main.supporting  ------*/
+
+
+/*=====================================
+=            aside.sidebar            =
+=====================================*/
+
+.sidebar {
+
+}
+.sidebar .wrapper {
+
+}
+
+.design-selection {
+
+}
+.design-selection h3{
+
+}
+.design-selection nav{
+
+}
+
+.design-archives {
+
+}
+.design-archives h3{
+
+}
+.design-archives nav{
+
+}
+
+.zen-resources {
+
+}
+.zen-resources h3 {
+
+}
+.zen-resources ul {
+
+}
+
+/*-----  End of aside.sidebar  ------*/
+
+
+
+
