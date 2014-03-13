@@ -1,8 +1,15 @@
 /* Author: Erik Aybar */
+@import url(http://fonts.googleapis.com/css?family=Londrina+Shadow);
+@import url(http://fonts.googleapis.com/css?family=Monoton);
+
 
 /*=======================================================
 =            HTML elements and Global Styles            =
 =======================================================*/
+
+* {
+	box-sizing: border-box;
+}
 
 /* basic elements */
 html, body {
@@ -14,10 +21,11 @@ body {
 	font: 75% georgia, sans-serif;
 	line-height: 1.88889;
 	color: #555753;
+	font-family: 'Londrina Shadow', cursive;
 }
 
 p {
-
+	font-size: 24px;
 }
 
 
@@ -34,9 +42,20 @@ a:visited {
 a:hover, a:focus, a:active {
 }
 
+:before, :after {
+	display: block;
+}
+
 .page-wrapper {
-	width: 80%;
-	margin: 0 auto;
+
+}
+
+.intro header,
+.summary,
+.preamble,
+.main > div,
+.sidebar .wrapper > div {
+	padding: 30px;
 }
 
 /*-----  End of HTML elements and Global Styles  ------*/
@@ -56,30 +75,80 @@ a:hover, a:focus, a:active {
  * Contains only header, h1, and h2 in document
  */
 .intro { /*#zen-intro*/
-
+	background-color: #f2f2f2;
 }
 
-.intro header {
-
+.intro header { /*role=banner*/
+	min-height: 600px;
+	background-color: #c2c2c2;
+	position: relative;
+	overflow: hidden;
+	background-image: url('http://www.zastavki.com/pictures/1920x1200/2010/World_Travel___Tourism_Passenger_Airlines_026076_.jpg');
+	background-size: cover;
+	background-position: center;
 }
+.intro header:before {
+	position: absolute;
+	bottom: 25px;
+	font-size: 18px;
+	width: 100%;
+	text-align: center;
+	content: "by Erik Aybar";
+}
+.intro header:after {
+	position: absolute;
+	bottom: 25px;
+	font-size: 72px;
+	width: 100%;
+	text-align: center;
+	content: "Transport by Zen";
+	font-family: 'Monoton', cursive;
+}
+
 h1 {
-
+	padding-top: 250px;
+	float: right;
+	font-size: 36px;
+	line-height: 30px;
 }
+h1:before, h1:after {
+	font-family: sans-serif;
+}
+h1:before {
+	font-size: 18px;
+	content: "Another Inspired";
+}
+h1:after {
+	font-size: 24px;
+	content: "Creation";
+}
+
 h2 {
-
+	font-size: 48px;
 }
-h3 { /*8 Throughout Document*/
+h2:before {
+	font-size: 24px;
+	content: "A Journey Through...";
+}
 
+h3 { /*8 Throughout Document*/
+	font-size: 42px;
 }
 
 .summary {
-
+	clear: both;
 }
 .summary p:first-child {
-	color: red;
+	width: 60%;
 }
 .summary p:last-child {
-	color: green;
+	text-align: right;
+}
+.summary p:last-child:before {
+	width: 40%;
+	padding-left: 15%;
+	text-align: left;
+	content: "Contribute Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique rerum repudiandae cupiditate facilis reprehenderit adipisci.";
 }
 
 .preamble {
@@ -107,10 +176,25 @@ h3 { /*8 Throughout Document*/
 
 }
 .main .explanation h3 {
-
+	-moz-column-span   : all;
+	-webkit-column-span: all;
+	column-span        : all;
 }
-.main .explanation p { /* 2 P's */
+.main .explanation { /* 2 P's */
+	-moz-column-count   : 3;
+	-webkit-column-count: 3;
+	column-count        : 3;
+	-moz-column-gap     : 10px;
+	-webkit-column-gap  : 10px;
+	column-gap          : 10px;
+}
 
+@media screen and (max-width: 768px) {
+	.main .explanation { /* 2 P's */
+		-moz-column-count   : 1;
+		-webkit-column-count: 1;
+		column-count        : 1;
+	}
 }
 
 
@@ -165,23 +249,74 @@ footer a { /* footer a.zen-* */
 
 }
 
+
 .design-selection {
-
+	position: fixed;
+	width:auto;
+	margin: 0 auto;
+	top:90%;
+	transition: all 300ms;
 }
-.design-selection h3{
+.design-selection:hover {
+	top: 85%;
+}
 
+.design-selection h3{
+	text-align: center;
+	display:none;
 }
 .design-selection nav{
-
+	display: block;
+}
+.design-selection:hover {
+	/**
+	 * TODO: Show awesome hover effect menu instructing to go visit the author
+	 */
 }
 
+.design-selection li {
+	display: block;
+	float: left;
+}
+
+.design-selection a {
+	color: inherit;
+	display: block;
+	font-size: 18px;
+	padding: 15px 20px;
+	margin: 0;
+	background-color: #fff;
+	opacity: 0.6;
+	text-decoration: none;
+}
+.design-selection a:hover {
+	opacity: 1;
+}
+.design-selection .designer-name {
+	position: absolute;
+	top: 100%;
+	transition: all 500ms;
+	transition-delay: 300ms;
+}
+.design-selection li:hover .designer-name{
+	display: block;
+	position: fixed;
+	top: 85%;
+}
+
+.design-archives,
+.zen-resources {
+	width: 50%;
+	float:left ;
+	text-align: center;
+}
 .design-archives {
 
 }
 .design-archives h3{
 
 }
-.design-archives nav{
+.design-archives nav {
 
 }
 
@@ -196,7 +331,75 @@ footer a { /* footer a.zen-* */
 }
 
 /*-----  End of aside.sidebar  ------*/
+.page-wrapper {
+	width: 100%;
+	overflow: hidden;
+}
 
+.page-wrapper .intro > div,
+.page-wrapper .main > *,
+.wrapper .design-archives,
+.wrapper .zen-resources {
+	margin: 0 auto;
+}
 
+/*Extra small devices Phones (<768px)
+Small devices Tablets (≥768px)
+Medium devices Desktops (≥992px)
+Large devices Desktops (≥1200px)*/
+
+@media screen and (min-width: 1200px) {
+
+	.page-wrapper .intro > div,
+	.page-wrapper .main > *,
+	.wrapper .design-archives,
+	.wrapper .zen-resources {
+		width: 1140px;
+	}
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+
+	.page-wrapper .intro > div,
+	.page-wrapper .main > *,
+	.wrapper .design-archives,
+	.wrapper .zen-resources {
+		width: 900px;
+	}
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+
+	.page-wrapper .intro > div,
+	.page-wrapper .main > *,
+	.wrapper .design-archives,
+	.wrapper .zen-resources {
+		width: 640px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+
+	.page-wrapper .intro > div,
+	.page-wrapper .main > *,
+	.wrapper .design-archives,
+	.wrapper .zen-resources {
+		width: 100%;
+	}
+
+	/**
+	 * Define All Actions Unique to Layout Changing on Mobile
+	 */
+	.design-archives,
+	.zen-resources {
+		width: 100%;
+		float:none;
+		text-align: center;
+	}
+
+}
 
 
