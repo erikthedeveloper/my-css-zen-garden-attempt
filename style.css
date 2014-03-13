@@ -337,9 +337,7 @@ footer a { /* footer a.zen-* */
 }
 
 .page-wrapper .intro > div,
-.page-wrapper .main > *,
-.wrapper .design-archives,
-.wrapper .zen-resources {
+.page-wrapper .main > *{
 	margin: 0 auto;
 }
 
@@ -351,9 +349,7 @@ Large devices Desktops (≥1200px)*/
 @media screen and (min-width: 1200px) {
 
 	.page-wrapper .intro > div,
-	.page-wrapper .main > *,
-	.wrapper .design-archives,
-	.wrapper .zen-resources {
+	.page-wrapper .main > *{
 		width: 1140px;
 	}
 
@@ -362,9 +358,7 @@ Large devices Desktops (≥1200px)*/
 @media screen and (min-width: 992px) and (max-width: 1200px) {
 
 	.page-wrapper .intro > div,
-	.page-wrapper .main > *,
-	.wrapper .design-archives,
-	.wrapper .zen-resources {
+	.page-wrapper .main > *{
 		width: 900px;
 	}
 
@@ -373,9 +367,7 @@ Large devices Desktops (≥1200px)*/
 @media screen and (min-width: 768px) and (max-width: 992px) {
 
 	.page-wrapper .intro > div,
-	.page-wrapper .main > *,
-	.wrapper .design-archives,
-	.wrapper .zen-resources {
+	.page-wrapper .main > *{
 		width: 640px;
 	}
 
@@ -384,9 +376,7 @@ Large devices Desktops (≥1200px)*/
 @media screen and (max-width: 768px) {
 
 	.page-wrapper .intro > div,
-	.page-wrapper .main > *,
-	.wrapper .design-archives,
-	.wrapper .zen-resources {
+	.page-wrapper .main > *{
 		width: 100%;
 	}
 
