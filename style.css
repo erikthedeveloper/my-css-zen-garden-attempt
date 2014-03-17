@@ -17,6 +17,10 @@ html, body {
 	padding: 0;
 }
 
+div, aside, footer {
+	overflow: hidden;
+}
+
 body {
 	font: 75% georgia, sans-serif;
 	line-height: 1.88889;
@@ -26,7 +30,13 @@ body {
 
 p {
 	font-size: 24px;
+	font-family: 'sans';
 }
+
+ul {
+	list-style-type: none;
+}
+
 
 
 a {
@@ -54,7 +64,8 @@ a:hover, a:focus, a:active {
 .summary,
 .preamble,
 .main > div,
-.sidebar .wrapper > div {
+.sidebar .wrapper .design-archives,
+.sidebar .wrapper .design-resources {
 	padding: 30px;
 }
 
@@ -101,7 +112,7 @@ a:hover, a:focus, a:active {
 	font-size: 72px;
 	width: 100%;
 	text-align: center;
-	content: "Transport by Zen";
+	content: "Transport via Zen";
 	font-family: 'Monoton', cursive;
 }
 
@@ -243,65 +254,96 @@ footer a { /* footer a.zen-* */
 =====================================*/
 
 .sidebar {
+/*	padding-top: 500px;
+	background-image: url('airplane_red.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 500px auto;*/
+}
+.sidebar:before {
+	content: "CSS: The Journey!";
+	text-align: center;
+	font-size: 48px;
 
+	background-image: url('airplane_red.png');
+	background-repeat: no-repeat;
+	background-position: center 100px;
+	background-size: auto 200px;
+	height: 400px;
 }
 .sidebar .wrapper {
 
 }
 
 
-.design-selection {
-	position: fixed;
-	width:auto;
-	margin: 0 auto;
-	top:90%;
-	transition: all 300ms;
-}
-.design-selection:hover {
-	top: 85%;
-}
 
-.design-selection h3{
-	text-align: center;
-	display:none;
-}
-.design-selection nav{
-	display: block;
-}
-.design-selection:hover {
+/**
+ * Weird Hover Effect Thing....
+ */
+@media screen and (min-width: 768px) {
+	.design-selection {
+		position: fixed;
+		width: 100%;
+		background-color: red;
+		background-color: rgba(0,0,0,0.5);
+		margin: 0 auto;
+		bottom: -30px;
+		/*bottom: 0;*/
+		height: 50px;
+		transition: all 300ms;
+
+		overflow: visible;
+	}
+	.design-selection:hover {
+		bottom: 0px;
+	}
+
+	.design-selection h3 {
+		display: none;
+	}
+
 	/**
-	 * TODO: Show awesome hover effect menu instructing to go visit the author
+	 * Show only the content contained within the <a>
 	 */
-}
+	.design-selection nav{
+		display: block;
+		overflow: visible;
+		position: relative;
+		width:80%;
+		margin:0 auto;
 
-.design-selection li {
-	display: block;
-	float: left;
-}
+		top: 2000px;
+	}
+	.design-selection nav li a {
+		position: relative;
+		top: -2000px;
+	}
 
-.design-selection a {
-	color: inherit;
-	display: block;
-	font-size: 18px;
-	padding: 15px 20px;
-	margin: 0;
-	background-color: #fff;
-	opacity: 0.6;
-	text-decoration: none;
-}
-.design-selection a:hover {
-	opacity: 1;
-}
-.design-selection .designer-name {
-	position: absolute;
-	top: 100%;
-	transition: all 500ms;
-	transition-delay: 300ms;
-}
-.design-selection li:hover .designer-name{
-	display: block;
-	position: fixed;
-	top: 85%;
+
+	.design-selection li {
+		display: inline-block;
+	}
+
+	.design-selection a {
+		color: inherit;
+		display: block;
+		font-size: 18px;
+		margin: 0;
+		opacity: 0.6;
+		text-decoration: none;
+	}
+	.design-selection a:hover {
+		opacity: 1;
+	}
+	.design-selection .designer-name {
+		position: absolute;
+		opacity: 0;
+		transition: all 500ms;
+		transition-delay: 300ms;
+	}
+	.design-selection li:hover .designer-name{
+		opacity: 1;
+	}
 }
 
 .design-archives,
@@ -384,7 +426,8 @@ Large devices Desktops (≥1200px)*/
 	 * Define All Actions Unique to Layout Changing on Mobile
 	 */
 	.design-archives,
-	.zen-resources {
+	.zen-resources,
+	.design-selection {
 		width: 100%;
 		float:none;
 		text-align: center;
